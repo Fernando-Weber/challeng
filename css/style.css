@@ -1,0 +1,303 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Trebuchet MS', sans-serif;
+}
+.container{
+	width: 100%;
+	height: 100vh;
+	background: url(../img/home.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+.overlay {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(315deg, rgba(255,0,224,.7), rgb(40,2,177));
+	background-size: cover;
+	background-position: center;
+}
+
+.navbar {
+	position: relative;
+	top: 0;
+	margin-left: 2%;
+}
+
+.navbar a {
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
+	font-size: 15px;
+}
+.navbar a:hover {
+	color: rgb(255,0,224);
+	transition: .5s linear;
+}
+.logo {
+	margin-top: 20px;
+	border-radius: 30%;
+	position: absolute;
+	top: 0;
+	right: 44%;
+}
+.logo-text {
+	color: #fff;
+	font-weight: 700;
+	font-size: 25px;
+	position: relative;
+	top: -20px;
+}
+.header-btn {
+	padding: 15px 25px;
+	border-radius: 25px;
+	border: 1px solid #fff;
+	position: absolute;
+	top: 20px;
+	right: 10%;
+}
+.header-btn a {
+	color: #fff;
+	text-decoration: none;
+}
+.header-btn:hover {
+	background: rgb(255,0,224);
+	cursor: pointer;
+	border: 1px solid rgb(255,0,224);
+	transition: .3s linear;
+}
+
+
+.home {
+	height: 100vh;
+    min-height: 500px;
+}
+.home .inner-width {
+	display: flex;
+    align-items: center;
+    height: 100%;
+}
+.home .content {
+	 width: 100%;
+}
+.home h1 {
+	font-size: 64px;
+	color: #fff;
+	font-weight: 900;
+	text-align: center;
+}
+.home h2 {
+	font-size: 18px;
+	color: #eee;
+	text-align: center;
+	margin-bottom: 25px;
+}
+.home .btns {
+	text-align: center;
+}
+.home a {
+	text-decoration: none;
+	color: #fff;
+}
+.btns a {
+	padding: 15px 30px;
+	border-radius: 25px;
+	border: 1px solid #fff;
+	text-decoration: none;
+	color: #fff;
+}
+.home a:nth-child(1):hover{
+	background-color: #000;
+	border: 1px solid #000;
+	transition: .3s linear;
+}
+.home a:nth-child(2){
+	background-color: #000;
+	border: 1px solid #000;
+}
+.home a:nth-child(2):hover{
+	background-color: transparent;
+	border: 1px solid #fff;
+	transition: .3s linear;
+}
+
+.container__two {
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+
+}
+.container__two h1 {
+	font-size: 3.125rem; /* Descobri que 1rem = 16px, logo 50px = 3.125rem ;) */
+	font-weight: 700;
+	text-align: center;
+	margin: 20px 0;
+}
+
+.container__two .inner-width {
+	width: 95%;
+	margin: 0 auto;
+}
+.inner-width .item {
+	width: 280px;
+	text-align: center;
+	display: inline-block;
+	margin: 20px 10px ;
+}
+.item svg {
+	padding: 10px;
+	background-color: rgba(6,181,255,.3);
+	border-radius: 50%;
+}
+
+.bi {
+	color: rgb(40,2,177);
+}
+
+.item h3 {
+	color: #000;
+	font-weight: 900;
+	padding-bottom: 5px;
+}
+
+.item p {
+	font-size: 1rem;
+}
+
+
+
+@media screen and (max-width:1000px){
+	.overlay {
+		background: linear-gradient(345deg, rgba(255,0,224,.5),rgb(40,2,177));
+	}
+	.navbar {
+		position: fixed;
+		top: 50;
+		margin-left: 0;
+		background: linear-gradient(345deg, rgba(255,0,224,.5),rgb(40,2,177));
+		width: 100%;
+		height: 100vh;
+		display: none;
+	}	
+
+	.navbar .links {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	.navbar a {
+		display: block;
+		padding-top: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		transition: .5s linear;
+	}
+	.navbar a:hover {
+		color: rgb(255,0,255);
+	}
+	.logo {
+		position: absolute;
+		left: 10%;
+	}
+	.header-btn {
+		display: none;
+	}
+	.menu-toggle {
+		position: absolute;
+		top: 30px;
+		right: 10%;
+	}
+	.navbar,.logo,.menu-toggle {
+		position: fixed;
+	}
+	.menu-toggle span:before,
+	.menu-toggle span:after {
+		content: "";
+	    width: 30px;
+	    height: 4px;
+	    background-color: #fff;
+	    font-weight: 900;
+	    display: block;
+	    cursor: pointer;
+	}
+	/*  */
+	.menu-toggle span:before {
+		transform: translateY(0) rotate(-45deg);
+		transition: .4s linear;
+	}
+	.menu-toggle span:after {
+		transform: translateY(0) rotate(45deg);
+		transition: .4s linear;
+	}
+
+	.container.active .menu-toggle span {
+	    transform: rotate(360deg);
+	    background-color: transparent;
+	}
+	.container.active .menu-toggle span:before {
+	    transform: translateY(-5px);
+	    transition: .4s linear;
+	}
+
+	.container.active .menu-toggle span:after {
+	    transform: translateY(5px);
+	    transition: .4s linear;
+	}
+
+
+	/*  */
+	.home {
+		
+	}
+	.home h1 {
+		font-size: 30px;
+		
+	}
+	.home h2 {
+		font-size: 16px;
+		color: #ddd;
+		text-align: center;
+		padding-left: 15px;
+	}
+	.home .btns {
+		left: 10%;
+	}
+
+	/* Other Container _ Premiun Services*/
+	.container__two {
+		background-color: #fafafa; 
+	}
+
+	.container__two h1 {
+		font-size: 2.3rem; 
+	}
+
+	.container__two .inner-width p{
+		color: #333;
+	}
+	.container__two .inner-width .item {
+		margin-left: 25%;
+	}
+
+	.container__two .inner-width {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+
+
+
+	@media screen and (max-width: 400px){
+		.home a {
+			display: block;
+			margin: 20px 30px;
+			text-align: center;
+			padding: 15px 30px;
+		}
+	}
+}
